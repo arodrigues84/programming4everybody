@@ -19,6 +19,8 @@ menagerie = { :foxes => 2,
     :ham => 1
   }
 
+puts movies.select{|k,v| v > 4}.keys
+
 #object_id
 
 puts "string".object_id
