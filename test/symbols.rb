@@ -19,7 +19,7 @@ menagerie = { :foxes => 2,
     :ham => 1
   }
 
-puts movies.select{|k,v| v > 4}.keys
+puts movies.select{|k,v| v > 4}.keys #display the keys
 
 #object_id
 
