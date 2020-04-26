@@ -2,10 +2,15 @@
 
 def double (n)
     yield n
-  end
+end
   
-  double (23) {|n| n*2}
+double (23) {|n| n*2}
 
+#yielding if Block given
+def welcome_message
+  puts "Welcome!"
+  yield if block_given?
+end
   #Proc
 
 group_1 = [4.1, 5.5, 3.2, 3.3, 6.1, 3.9, 4.7]
