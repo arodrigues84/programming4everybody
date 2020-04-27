@@ -24,8 +24,7 @@ case choice
     puts "Movie?"
     title=gets.chomp
     if names.include?(title)
-      movie = movies.select{|a| a[:name] == title}
-      puts movie
+      movie = movies.select{|a| a[:name] == title}[0]
       puts "That movie already exists! This movie has done in #{movie[:year]}, has a rating of #{movie[:imdb_rating]} and the synopse is: #{movie[:synopse]}."
     else
       puts "Rating?"
@@ -56,7 +55,7 @@ case choice
       movies << {name: title, year: year, imdb_rating: rating, synopse: synopse}
       puts "#{title}, updated with year #{year}, a rating of #{rating} and a synopse #{synopse}"
     else
-      puts "I don't have the filme #{title}"
+      puts "I don't have the film #{title}"
     end
 
   when "display"
@@ -67,10 +66,8 @@ case choice
     puts "Movie?"
     title=gets.chomp
     if names.include?(title)
-      movie = movies.select{|a| a[:name] == title}
-      puts movie
+      movie = movies.select{|a| a[:name] == title}[0]
       movies.delete(movie)
-      puts movies
       puts "#{title} has been deleted."
     else
       puts "Movie not found!"
